@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="pantilt" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find pantilt_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find pantilt_description)/urdf/pantilt.trans" />
+<xacro:include filename="$(find pantilt_description)/urdf/pantilt.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0005375835080120159 -0.010108698160494176 0.020419259083784055" rpy="0 0 0"/>
+    <mass value="0.15393113426455543"/>
+    <inertia ixx="5.7e-05" iyy="3.6e-05" izz="4.7e-05" ixy="1e-06" iyz="1.4e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pantilt_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pantilt_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
